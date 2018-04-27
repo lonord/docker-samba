@@ -5,4 +5,4 @@ RUN chmod +x /run.sh \
 	&& apt-get update \
 	&& apt-get install -y samba \
 	&& rm -rf /var/lib/apt/lists/*
-CMD [ "bash" ]
+CMD [ "/run.sh" ]
