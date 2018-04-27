@@ -1,5 +1,6 @@
 #!/bin/bash
 
-netatalk
-touch /var/log/afpd.log
-tail -f /var/log/afpd.log
+service samba start
+touch /var/log/samba/log.smbd
+touch /var/log/samba/log.nmbd
+tail -f /var/log/samba/log.smbd /var/log/samba/log.nmbd
