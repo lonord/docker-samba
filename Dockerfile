@@ -1,4 +1,4 @@
-FROM debian:stretch
+FROM ubuntu:16.04
 LABEL maintainer="lonord.b@gmail.com"
 COPY scripts/run.sh /run.sh
 RUN chmod +x /run.sh \
