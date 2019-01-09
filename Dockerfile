@@ -2,7 +2,8 @@ FROM alpine:3.8
 LABEL maintainer="David Personette <dperson@gmail.com>"
 
 # Install samba
-RUN apk --no-cache --no-progress upgrade && \
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \
+	apk --no-cache --no-progress upgrade && \
 	apk --no-cache --no-progress add bash samba shadow tini && \
 	adduser -D -G users -H -S -g 'Samba User' -h /tmp smbuser && \
 	file="/etc/samba/smb.conf" && \
